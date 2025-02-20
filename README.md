@@ -1,5 +1,10 @@
 # Documentation d'une api web
 
+Dans ce dépot je vais ajouter le générateur de documentation à l'api web et je vais ajouter une commande dans le dashboard aspire pour accèder à cette documentation.
+
+* [Ajouter la documentation dans un project web api](#ajouter-la-documentation-dans-un-project-web-api)
+* [Ajouter une commande dans le dashboard aspire](#ajouter-une-commande-dans-le-dashboard-aspire)
+
 ## Ajouter la documentation dans un project web api
 
 Depuis .Net 9 [Swagger](https://github.com/domaindrivendev/Swashbuckle.AspNetCore?tab=readme-ov-file#swashbuckleaspnetcoreswaggerui) à été remplacé par OpenAPI dans le template d'un projet webapi.  Heureusement on peut le remettre en seulement quelques lignes de codes.  Je vais aussi explorer 2 autres libraire de documentation de d'api web, [RedDoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore?tab=readme-ov-file#swashbuckleaspnetcoreredoc) et [Scalar](https://scalar.com).
@@ -60,3 +65,11 @@ Depuis .Net 9 [Swagger](https://github.com/domaindrivendev/Swashbuckle.AspNetCor
     ```
 
     La documentation est accessible par l'url [BaseURL]/scalar
+
+## Ajouter une commande dans le dashboard aspire
+
+Maintenant que nous avons un générateur de documentation pour notre api web.  Ça serait bien de pouvoir y accéder à partir du dashboard aspire.  
+
+Pour ajouter et configurer la commande à notre api web on doit utiliser "WithCommand" dans dans le fichier program.cs du projet "AspireAppWebApiDoc.AppHost".
+
+Pour garder notre ficier program.cs le plus propre possible.  L'ajout de la commande sera fait dans une méthode d'extension dans le fichier "Extension\".
